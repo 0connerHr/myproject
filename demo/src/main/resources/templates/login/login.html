@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/static/css/css.css" type="text/css">
+
 <title>Insert title here</title>
 </head>
 <body>
@@ -10,9 +10,14 @@
 <div class="loginInfo">
 	<form th:action="@{/input}" method="post">
 		　ユーザ名：<input type="text" name="userName"><br>
-		パスワード：<input type="text" name="password"><br>
+		パスワード：<input type="text" name="passward"><br>
 		<input type="submit" value="ログイン">
 	</form>
+	<div th:each="user:${userInfo}">
+		<p th:text="${user.user_id}"></p>
+		<p th:text="${user.user_name}"></p>
+		<p th:text="${user.passward}"></p>
+	</div>
 </div>
 </body>
 </html>
